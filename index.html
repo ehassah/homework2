@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
   <link rel="stylesheet" href="/stylesheets/style.css">
   <link rel="icon" href="favicon.ico" type="image/icon" sizes="16x16">
-
 </head>
 
 <body>
@@ -48,27 +47,15 @@
           <span class="thumbnail-title">Barbara</span>
         </a>
       </li>
-      <li class="thumbnail-item">
-        <a href="img/FlexFroggy.jpg" data-image-role="trigger" data-image-title="Flex Froggy" data-image-url="img/FlexFroggy.jpg">
-          <img class="thumbnail-image" src="/img/FlexFroggy.jpg" alt="Flex Froggy">
-          <span class="thumbnail-title">Flex Froggy</span>
-      </a>
-      </li>
-      <li class="thumbnail-item">
-        <a href="img/GridGarden.jpg" data-image-role="trigger" data-image-title="Grid Garden" data-image-url="img/GridGarden.jpg">
-          <img class="thumbnail-image" src="/img/GridGarden.jpg" alt="Grid Garden">
-          <span class="thumbnail-title">Grid Garden</span>
-      </a>
-      </li>
-
     </ul>
+
     <div class="detail-image-container">
-      <input type="button" class="detail-image-arrow" onclick="toggleLeft()" name="left" value="<">
+      <button type="button" button-toggle-role="left" name="button">&#8249;</button>
       <div class="detail-image-frame">
         <img class="detail-image" data-image-role="target" src="/img/otter1.jpg" alt="">
         <span class="detail-image-title" data-image-role="title">Stayin' Alive</span>
       </div>
-      <input type="button" class="detail-image-arrow" onclick="toggleRight()" name="right" value=">">
+      <button type="button" button-toggle-role="right" name="button">&#8250;</button>
     </div>
   </main>
   <script src="scripts/main.js" charset="utf-8"></script>

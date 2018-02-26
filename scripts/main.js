@@ -1,6 +1,8 @@
 var DETAIL_IMAGE_SELECTOR = "[data-image-role = \"target\"]";
 var DETAIL_TITLE_SELECTOR = "[data-image-role = \"title\"]";
 var THUMBNAIL_LINK_SELECTOR = "[data-image-role = \"trigger\"]";
+var PREVIOUS_BUTTON = "[button-toggle-role=\"left\"]";
+var NEXT_BUTTON = "[button-toggle-role=\"right\"]";
 
 function setDetails(imageUrl, titleText) {
   "use strict";
@@ -68,18 +70,15 @@ function findObjectByKey(array, key, value) {
   return null;
 }
 
-
-//
 function toggleRight() {
   "use strict";
   var currentIndex = findObjectByKey(getThumbnailsArray(), "data-image-title", getImageFromTarget());
   var arr = getThumbnailsArray();
   var index;
-  if(currentIndex == arr.length-1 ){
+  if (currentIndex == arr.length - 1) {
     index = 0;
-  }
-  else{
-    index = currentIndex+1;
+  } else {
+    index = currentIndex + 1;
   }
   var imageTitle = arr[index].getAttribute("data-image-title");
   var imageUrl = arr[index].getAttribute("data-image-url");
@@ -91,11 +90,10 @@ function toggleLeft() {
   var currentIndex = findObjectByKey(getThumbnailsArray(), "data-image-title", getImageFromTarget());
   var arr = getThumbnailsArray();
   var index;
-  if(currentIndex == 0){
-    index = arr.length-1;
-  }
-  else{
-    index = currentIndex-1;
+  if (currentIndex == 0) {
+    index = arr.length - 1;
+  } else {
+    index = currentIndex - 1;
   }
   var imageTitle = arr[index].getAttribute("data-image-title");
   var imageUrl = arr[index].getAttribute("data-image-url");
@@ -104,9 +102,19 @@ function toggleLeft() {
 
 function toggle() {
   "use strict";
-  var thumbnails = getThumbnailsArray();
-  thumbnails.forEach(toggleLeft);
-  thumbnails.forEach(toggleRight);
+  // var thumbnails = getThumbnailsArray();
+  // var a = document.getElementsByTagName("input");
+  var left = document.querySelector(PREVIOUS_BUTTON);
+  var right = document.querySelector(NEXT_BUTTON);
+  left.addEventListener("click", function() {
+    toggleLeft();
+  }
+  );
+  
+  right.addEventListener("click", function() {
+    toggleRight();
+  }
+  );
 }
 
 toggle();
