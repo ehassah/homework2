@@ -101,3 +101,12 @@ function toggleLeft() {
   var imageUrl = arr[index].getAttribute("data-image-url");
   setDetails(imageUrl, imageTitle);
 }
+
+function toggle() {
+  "use strict";
+  var thumbnails = getThumbnailsArray();
+  thumbnails.forEach(toggleLeft);
+  thumbnails.forEach(toggleRight);
+}
+
+toggle();
