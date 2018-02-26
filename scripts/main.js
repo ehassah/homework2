@@ -102,15 +102,13 @@ function toggleLeft() {
 
 function toggle() {
   "use strict";
-  // var thumbnails = getThumbnailsArray();
-  // var a = document.getElementsByTagName("input");
   var left = document.querySelector(PREVIOUS_BUTTON);
   var right = document.querySelector(NEXT_BUTTON);
   left.addEventListener("click", function() {
     toggleLeft();
   }
   );
-  
+
   right.addEventListener("click", function() {
     toggleRight();
   }
